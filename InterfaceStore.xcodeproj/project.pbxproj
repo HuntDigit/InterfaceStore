@@ -15,6 +15,7 @@
 		CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA1E2E60FB3B0059489E /* PillowShape.swift */; };
 		CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA882CB92E61E05200CA5BEE /* CustomTabBarViewScreen.swift */; };
 		CA882CBC2E61E0BE00CA5BEE /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */; };
+		CA882CBE2E61EB0200CA5BEE /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA882CBD2E61EAFA00CA5BEE /* CustomTabBarContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		CA63CA1E2E60FB3B0059489E /* PillowShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillowShape.swift; sourceTree = "<group>"; };
 		CA882CB92E61E05200CA5BEE /* CustomTabBarViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewScreen.swift; sourceTree = "<group>"; };
 		CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
+		CA882CBD2E61EAFA00CA5BEE /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,18 +123,19 @@
 		CA882CB72E61E01700CA5BEE /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				CA882CB82E61E03A00CA5BEE /* CustomTabBar */,
 				CA882CB92E61E05200CA5BEE /* CustomTabBarViewScreen.swift */,
-				CA882CB82E61E03A00CA5BEE /* CustomTabView */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
-		CA882CB82E61E03A00CA5BEE /* CustomTabView */ = {
+		CA882CB82E61E03A00CA5BEE /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				CA882CBD2E61EAFA00CA5BEE /* CustomTabBarContainerView.swift */,
 				CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */,
 			);
-			path = CustomTabView;
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +217,7 @@
 				CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */,
 				CA63CA192E5CF71D0059489E /* HealthcareLoginView.swift in Sources */,
 				CA63CA1C2E5F945A0059489E /* HealthAppConstants.swift in Sources */,
+				CA882CBE2E61EB0200CA5BEE /* CustomTabBarContainerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import SwiftUI
 struct CustomTabBarView: View {
     
     var tabs: [TabBarItem] = []
+    @Binding var selection: TabBarItem
     
     var  body: some View {
         HStack {
@@ -31,11 +32,20 @@ extension CustomTabBarView {
                 .frame(width: 32, height: 32)
             Text(tab.title)
         }
-        .foregroundStyle(tab.color)
+        .foregroundStyle(selection == tab ? tab.color : .gray)
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
-        .background(tab.color.opacity(0.2))
+        .background(selection == tab ? tab.color.opacity(0.2) : .clear)
         .clipShape(RoundedRectangle(cornerRadius: 8))
+        .onTapGesture {
+            switchTabBarItem(tab)
+        }
+    }
+    
+    func switchTabBarItem(_ tabBarItem: TabBarItem) {
+        withAnimation {
+            selection = tabBarItem
+        }
     }
 }
 
@@ -51,6 +61,5 @@ struct TabBarItem : Hashable {
         .init(image: "star", title: "Favorite", color: .orange),
         .init(image: "person", title: "Profile", color: .green),
     ]
-    
-    CustomTabBarView(tabs: tabs)
+    CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!))
 }
