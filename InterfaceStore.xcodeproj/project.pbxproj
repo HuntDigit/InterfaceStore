@@ -10,6 +10,11 @@
 		CA63CA112E5CE9330059489E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA63CA0D2E5CE9330059489E /* Assets.xcassets */; };
 		CA63CA122E5CE9330059489E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0E2E5CE9330059489E /* ContentView.swift */; };
 		CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */; };
+		CA63CA192E5CF71D0059489E /* HealthcareLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA182E5CF71D0059489E /* HealthcareLoginView.swift */; };
+		CA63CA1C2E5F945A0059489E /* HealthAppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA1B2E5F944D0059489E /* HealthAppConstants.swift */; };
+		CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA1E2E60FB3B0059489E /* PillowShape.swift */; };
+		CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA882CB92E61E05200CA5BEE /* CustomTabBarViewScreen.swift */; };
+		CA882CBC2E61E0BE00CA5BEE /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +22,11 @@
 		CA63CA0D2E5CE9330059489E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA63CA0E2E5CE9330059489E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStoreApp.swift; sourceTree = "<group>"; };
+		CA63CA182E5CF71D0059489E /* HealthcareLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareLoginView.swift; sourceTree = "<group>"; };
+		CA63CA1B2E5F944D0059489E /* HealthAppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppConstants.swift; sourceTree = "<group>"; };
+		CA63CA1E2E60FB3B0059489E /* PillowShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillowShape.swift; sourceTree = "<group>"; };
+		CA882CB92E61E05200CA5BEE /* CustomTabBarViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarViewScreen.swift; sourceTree = "<group>"; };
+		CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,11 +59,80 @@
 		CA63CA102E5CE9330059489E /* InterfaceStore */ = {
 			isa = PBXGroup;
 			children = (
-				CA63CA0D2E5CE9330059489E /* Assets.xcassets */,
-				CA63CA0E2E5CE9330059489E /* ContentView.swift */,
-				CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */,
+				CA63CA142E5CECC10059489E /* Resources */,
+				CA63CA152E5CED000059489E /* MainApp */,
+				CA63CA162E5CED310059489E /* ContentStore */,
 			);
 			path = InterfaceStore;
+			sourceTree = "<group>";
+		};
+		CA63CA142E5CECC10059489E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CA63CA0D2E5CE9330059489E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA63CA152E5CED000059489E /* MainApp */ = {
+			isa = PBXGroup;
+			children = (
+				CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */,
+				CA63CA0E2E5CE9330059489E /* ContentView.swift */,
+			);
+			path = MainApp;
+			sourceTree = "<group>";
+		};
+		CA63CA162E5CED310059489E /* ContentStore */ = {
+			isa = PBXGroup;
+			children = (
+				CA882CB72E61E01700CA5BEE /* CustomTabBar */,
+				CA63CA172E5CF1810059489E /* HealthcareAppDesign */,
+			);
+			path = ContentStore;
+			sourceTree = "<group>";
+		};
+		CA63CA172E5CF1810059489E /* HealthcareAppDesign */ = {
+			isa = PBXGroup;
+			children = (
+				CA63CA1D2E60FB2C0059489E /* Drawing */,
+				CA63CA1A2E5F94440059489E /* Tools */,
+				CA63CA182E5CF71D0059489E /* HealthcareLoginView.swift */,
+			);
+			path = HealthcareAppDesign;
+			sourceTree = "<group>";
+		};
+		CA63CA1A2E5F94440059489E /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				CA63CA1B2E5F944D0059489E /* HealthAppConstants.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		CA63CA1D2E60FB2C0059489E /* Drawing */ = {
+			isa = PBXGroup;
+			children = (
+				CA63CA1E2E60FB3B0059489E /* PillowShape.swift */,
+			);
+			path = Drawing;
+			sourceTree = "<group>";
+		};
+		CA882CB72E61E01700CA5BEE /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				CA882CB92E61E05200CA5BEE /* CustomTabBarViewScreen.swift */,
+				CA882CB82E61E03A00CA5BEE /* CustomTabView */,
+			);
+			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		CA882CB82E61E03A00CA5BEE /* CustomTabView */ = {
+			isa = PBXGroup;
+			children = (
+				CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */,
+			);
+			path = CustomTabView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +207,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA882CBC2E61E0BE00CA5BEE /* CustomTabBarView.swift in Sources */,
 				CA63CA122E5CE9330059489E /* ContentView.swift in Sources */,
+				CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */,
+				CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */,
 				CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */,
+				CA63CA192E5CF71D0059489E /* HealthcareLoginView.swift in Sources */,
+				CA63CA1C2E5F945A0059489E /* HealthAppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
