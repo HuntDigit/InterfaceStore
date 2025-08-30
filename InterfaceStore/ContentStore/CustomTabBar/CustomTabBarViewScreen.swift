@@ -9,18 +9,18 @@ import SwiftUI
 
 struct CustomTabBarViewScreen: View {
     
-    @State private var selection: TabBarItem = .init(image: "house", title: "Home", color: .blue)
+    @State private var selection: TabBarItem = .home
     
     var body: some View {
         CustomTabBarContainerView(selection: $selection) {
             Color.blue
-                .tabBarItem(.init(image: "house", title: "Home", color: .blue), selection: $selection)
+                .tabBarItem(.home, selection: $selection)
             
             Color.orange
-                .tabBarItem(.init(image: "star", title: "Favorite", color: .orange), selection: $selection)
+                .tabBarItem(.favorites, selection: $selection)
             
             Color.green
-                .tabBarItem(.init(image: "person", title: "Profile", color: .green), selection: $selection)
+                .tabBarItem(.settings, selection: $selection)
         }
     }
 }

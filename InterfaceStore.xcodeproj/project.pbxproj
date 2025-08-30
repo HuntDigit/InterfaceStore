@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */; };
+		CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */; };
 		CA63CA112E5CE9330059489E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA63CA0D2E5CE9330059489E /* Assets.xcassets */; };
 		CA63CA122E5CE9330059489E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0E2E5CE9330059489E /* ContentView.swift */; };
 		CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUtils.swift; sourceTree = "<group>"; };
 		CA1DB1782E5CE8E000FD07C8 /* InterfaceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterfaceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA63CA0D2E5CE9330059489E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA63CA0E2E5CE9330059489E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		CA882CB82E61E03A00CA5BEE /* CustomTabBar */ = {
 			isa = PBXGroup;
 			children = (
+				CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */,
+				CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */,
 				CA882CBD2E61EAFA00CA5BEE /* CustomTabBarContainerView.swift */,
 				CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */,
 			);
@@ -213,6 +219,8 @@
 				CA882CBC2E61E0BE00CA5BEE /* CustomTabBarView.swift in Sources */,
 				CA63CA122E5CE9330059489E /* ContentView.swift in Sources */,
 				CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */,
+				CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */,
+				CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */,
 				CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */,
 				CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */,
 				CA63CA192E5CF71D0059489E /* HealthcareLoginView.swift in Sources */,

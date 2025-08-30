@@ -9,22 +9,27 @@ import SwiftUI
 
 struct CustomTabBarView: View {
     
+    private let geomertyID: String = "background_rectangle"
+    
     var tabs: [TabBarItem] = []
+    @State var pSelection: TabBarItem
     @Binding var selection: TabBarItem
+    @Namespace var localNamespace
     
     var  body: some View {
-        HStack {
-            ForEach(tabs, id: \.self) { tab in
-                tabView(tab: tab)
+        tabBarViewAnimated()
+            .onChange(of: selection) { _ , newValue in
+                withAnimation {
+                    pSelection = newValue
+                }
             }
-        }
-        .padding()
-        .background(Material.ultraThickMaterial)
     }
 }
 
+// MARK: - Static -
+
 extension CustomTabBarView {
-    private func tabView(tab: TabBarItem) -> some View {
+    private func staticTabView(tab: TabBarItem) -> some View {
         VStack {
             Image(systemName:tab.image)
                 .resizable()
@@ -32,34 +37,74 @@ extension CustomTabBarView {
                 .frame(width: 32, height: 32)
             Text(tab.title)
         }
-        .foregroundStyle(selection == tab ? tab.color : .gray)
+        .foregroundStyle(pSelection == tab ? tab.color : .gray)
         .padding(.vertical, 8)
         .frame(maxWidth: .infinity)
-        .background(selection == tab ? tab.color.opacity(0.2) : .clear)
+        .background(pSelection == tab ? tab.color.opacity(0.2) : .clear)
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .onTapGesture {
             switchTabBarItem(tab)
         }
     }
     
-    func switchTabBarItem(_ tabBarItem: TabBarItem) {
-        withAnimation {
-            selection = tabBarItem
+    func staticTabBarView() -> some View {
+        HStack {
+            ForEach(tabs, id: \.self) { tab in
+                staticTabView(tab: tab)
+            }
         }
+        .padding()
+        .background(Material.ultraThickMaterial)
+    }
+    
+    func switchTabBarItem(_ tabBarItem: TabBarItem) {
+        selection = tabBarItem
     }
 }
 
-struct TabBarItem : Hashable {
-    let image: String
-    let title: String
-    let color: Color
+// MARK: - Animated -
+
+extension CustomTabBarView {
+    
+    private func tabViewAnimated(tab: TabBarItem) -> some View {
+        VStack {
+            Image(systemName:tab.image)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 32, height: 32)
+            Text(tab.title)
+        }
+        .foregroundStyle(pSelection == tab ? tab.color : .gray)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity)
+        .background {
+            ZStack {
+                if pSelection == tab {
+                    RoundedRectangle(cornerRadius: 10)
+                        .fill(tab.color.opacity(0.2))
+                        .matchedGeometryEffect(id: geomertyID,
+                                               in: localNamespace)
+                }
+            }
+        }
+        .onTapGesture {
+            switchTabBarItem(tab)
+        }
+    }
+    
+    func tabBarViewAnimated() -> some View {
+        HStack {
+            ForEach(tabs, id: \.self) { tab in
+                tabViewAnimated(tab: tab)
+            }
+        }
+        .padding()
+        .background(Material.ultraThickMaterial)
+    }
 }
 
+
 #Preview {
-    var tabs: [TabBarItem] = [
-        .init(image: "house", title: "Home", color: .blue),
-        .init(image: "star", title: "Favorite", color: .orange),
-        .init(image: "person", title: "Profile", color: .green),
-    ]
-    CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!))
+    CustomTabBarView(tabs: [.home, .favorites, .settings], pSelection: .home,
+                     selection: .constant(.home))
 }
