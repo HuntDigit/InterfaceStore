@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct TabBarItemPreferanceKey: PreferenceKey {
-    
     typealias Value = [TabBarItem]
-    
     static let defaultValue: Value = []
     
     static func reduce(value: inout Value, nextValue: () -> Value) {

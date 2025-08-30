@@ -138,8 +138,8 @@
 			children = (
 				CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */,
 				CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */,
-				CA882CBD2E61EAFA00CA5BEE /* CustomTabBarContainerView.swift */,
 				CA882CBB2E61E0B600CA5BEE /* CustomTabBarView.swift */,
+				CA882CBD2E61EAFA00CA5BEE /* CustomTabBarContainerView.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
