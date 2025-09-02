@@ -9,25 +9,32 @@ import SwiftUI
 
 struct CustomNavigationBarContainerView<Content: View>: View {
     
-    @Binding var title: String
-    @Binding var isBackButtonHidden: Bool
+    @State var title: String
+    var isBackButtonHidden: Bool
     
     var content: Content
 
-    init(title:Binding<String>, isBackButtonHidden:Binding<Bool>, @ViewBuilder content: () -> Content) {
-        self._title = title
-        self._isBackButtonHidden = isBackButtonHidden
+    init(_ title: String? = nil, _ isBackButtonHidden: Bool = false, @ViewBuilder content: () -> Content) {
+        self.title = title ?? ""
+        self.isBackButtonHidden = isBackButtonHidden
         self.content = content()
     }
     
     var body: some View {
-        ZStack {
-            content
+        NavigationStack {
+            ZStack {
+                content
+                    .ignoresSafeArea(.all)
+
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .overlay(alignment: .top){
+                CustomNavigationBarView(title: title)
+            }
+            .onPreferenceChange(NavigationBarTitlePreferenceKey.self) { value in
+                title = value
+            }
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .overlay(alignment: .top){
-            CustomNavigationBarView(title: title,
-                                    isBackButtonHidden: isBackButtonHidden)
-        }
+        .toolbarVisibility(.hidden, for: .navigationBar)
     }
 }

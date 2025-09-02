@@ -12,6 +12,7 @@
 		CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */; };
 		CA3E06EA2E6720E4004D5BC8 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06E92E6720DC004D5BC8 /* CustomNavigationBarView.swift */; };
 		CA3E06EC2E6724FD004D5BC8 /* CustomNavigationBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06EB2E6724F1004D5BC8 /* CustomNavigationBarContainerView.swift */; };
+		CA3E06EE2E67300E004D5BC8 /* NavigationBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06ED2E673005004D5BC8 /* NavigationBarUtils.swift */; };
 		CA63CA112E5CE9330059489E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA63CA0D2E5CE9330059489E /* Assets.xcassets */; };
 		CA63CA122E5CE9330059489E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0E2E5CE9330059489E /* ContentView.swift */; };
 		CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */; };
@@ -30,6 +31,7 @@
 		CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarScreen.swift; sourceTree = "<group>"; };
 		CA3E06E92E6720DC004D5BC8 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
 		CA3E06EB2E6724F1004D5BC8 /* CustomNavigationBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarContainerView.swift; sourceTree = "<group>"; };
+		CA3E06ED2E673005004D5BC8 /* NavigationBarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarUtils.swift; sourceTree = "<group>"; };
 		CA63CA0D2E5CE9330059489E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA63CA0E2E5CE9330059489E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStoreApp.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		CA3E06E62E671EC6004D5BC8 /* CustomNavigationBar */ = {
 			isa = PBXGroup;
 			children = (
+				CA3E06ED2E673005004D5BC8 /* NavigationBarUtils.swift */,
 				CA3E06E92E6720DC004D5BC8 /* CustomNavigationBarView.swift */,
 				CA3E06EB2E6724F1004D5BC8 /* CustomNavigationBarContainerView.swift */,
 				CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */,
@@ -238,6 +241,7 @@
 				CA3E06EC2E6724FD004D5BC8 /* CustomNavigationBarContainerView.swift in Sources */,
 				CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */,
 				CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */,
+				CA3E06EE2E67300E004D5BC8 /* NavigationBarUtils.swift in Sources */,
 				CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */,
 				CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */,
 				CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */,

@@ -13,14 +13,10 @@ struct CustomNavigationBarScreen: View {
     @State var isBackButtonHidden: Bool = true
 
     var body: some View {
-        CustomNavigationBarContainerView(title: $title,
-                                         isBackButtonHidden: $isBackButtonHidden) {
+        CustomNavigationBarContainerView() {
             Text("Content")
-                .font(.headline)
-        }
-        .onAppear() {
-            title = "Navigation Bar New2"
-            isBackButtonHidden = false
+                .customNavigationBarTitle("Tex2aawdwda332")
+
         }
     }
 }
