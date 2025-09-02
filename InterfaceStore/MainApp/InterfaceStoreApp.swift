@@ -11,7 +11,7 @@ import SwiftUI
 struct InterfaceStoreApp: App {
     var body: some Scene {
         WindowGroup {
-            HealthcareLoginView()
+            CustomNavigationBarScreen()
         }
     }
 }

@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */; };
 		CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */; };
+		CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */; };
+		CA3E06EA2E6720E4004D5BC8 /* CustomNavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06E92E6720DC004D5BC8 /* CustomNavigationBarView.swift */; };
+		CA3E06EC2E6724FD004D5BC8 /* CustomNavigationBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06EB2E6724F1004D5BC8 /* CustomNavigationBarContainerView.swift */; };
 		CA63CA112E5CE9330059489E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA63CA0D2E5CE9330059489E /* Assets.xcassets */; };
 		CA63CA122E5CE9330059489E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0E2E5CE9330059489E /* ContentView.swift */; };
 		CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */; };
@@ -24,6 +27,9 @@
 		CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUtils.swift; sourceTree = "<group>"; };
 		CA1DB1782E5CE8E000FD07C8 /* InterfaceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterfaceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarScreen.swift; sourceTree = "<group>"; };
+		CA3E06E92E6720DC004D5BC8 /* CustomNavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarView.swift; sourceTree = "<group>"; };
+		CA3E06EB2E6724F1004D5BC8 /* CustomNavigationBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBarContainerView.swift; sourceTree = "<group>"; };
 		CA63CA0D2E5CE9330059489E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA63CA0E2E5CE9330059489E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStoreApp.swift; sourceTree = "<group>"; };
@@ -62,6 +68,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CA3E06E62E671EC6004D5BC8 /* CustomNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				CA3E06E92E6720DC004D5BC8 /* CustomNavigationBarView.swift */,
+				CA3E06EB2E6724F1004D5BC8 /* CustomNavigationBarContainerView.swift */,
+				CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */,
+			);
+			path = CustomNavigationBar;
+			sourceTree = "<group>";
+		};
 		CA63CA102E5CE9330059489E /* InterfaceStore */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,6 +108,7 @@
 		CA63CA162E5CED310059489E /* ContentStore */ = {
 			isa = PBXGroup;
 			children = (
+				CA3E06E62E671EC6004D5BC8 /* CustomNavigationBar */,
 				CA882CB72E61E01700CA5BEE /* CustomTabBar */,
 				CA63CA172E5CF1810059489E /* HealthcareAppDesign */,
 			);
@@ -218,14 +235,17 @@
 			files = (
 				CA882CBC2E61E0BE00CA5BEE /* CustomTabBarView.swift in Sources */,
 				CA63CA122E5CE9330059489E /* ContentView.swift in Sources */,
+				CA3E06EC2E6724FD004D5BC8 /* CustomNavigationBarContainerView.swift in Sources */,
 				CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */,
 				CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */,
 				CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */,
+				CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */,
 				CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */,
 				CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */,
 				CA63CA192E5CF71D0059489E /* HealthcareLoginView.swift in Sources */,
 				CA63CA1C2E5F945A0059489E /* HealthAppConstants.swift in Sources */,
 				CA882CBE2E61EB0200CA5BEE /* CustomTabBarContainerView.swift in Sources */,
+				CA3E06EA2E6720E4004D5BC8 /* CustomNavigationBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
