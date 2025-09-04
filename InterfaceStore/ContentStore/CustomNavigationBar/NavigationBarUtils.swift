@@ -11,9 +11,9 @@ struct NavigationBarTitlePreferenceKey: PreferenceKey {
     static var defaultValue: String = ""
     
     static func reduce(value: inout String, nextValue: () -> String) {
-        print("Next Value: \(nextValue())")
+//        print("Next Value: \(nextValue())")
         value += nextValue()
-        print("Seted value:\(value)")
+//        print("Seted value:\(value)")
     }
 }
 

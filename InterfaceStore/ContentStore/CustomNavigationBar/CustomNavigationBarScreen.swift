@@ -6,17 +6,21 @@
 //
 
 import SwiftUI
+import CloudKit
 
 struct CustomNavigationBarScreen: View {
     
     @State var title: String = "Navigation Bar"
     @State var isBackButtonHidden: Bool = true
-
+    
     var body: some View {
         CustomNavigationBarContainerView() {
-            Text("Content")
-                .customNavigationBarTitle("Tex2aawdwda332")
-
+            
+            VStack {
+                Text("Content")
+                    .font(.largeTitle)
+            }
+            .customNavigationBarTitle("Navigation from Preferance")
         }
     }
 }

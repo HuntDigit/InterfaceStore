@@ -19,6 +19,4 @@ extension String {
     static let skipButtonTitle = "Skip"
     static let alreadyHaveAnAccountTipText = "Already Have An Account?"
     static let logInTipText = "Log In!"
-
-    
 }
