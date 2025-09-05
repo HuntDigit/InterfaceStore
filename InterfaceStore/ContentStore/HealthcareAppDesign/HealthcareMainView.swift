@@ -11,7 +11,7 @@ import SwiftUI
 struct AppointmentButtonStyleFilled: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 14))
+            .font(.satoshi(size: 14))
             .frame(maxWidth:.infinity)
             .padding(16)
             .foregroundStyle(.blue)
@@ -25,7 +25,7 @@ struct AppointmentButtonStyleFilled: ButtonStyle {
 struct AppointmentButtonStyleTransparent: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.system(size: 14))
+            .font(.satoshi(size: 14))
             .frame(maxWidth:.infinity)
             .padding(16)
             .foregroundStyle(.white)
@@ -82,22 +82,22 @@ struct HealthcareMainView: View {
             VStack(spacing: 8) {
                 HStack(alignment: .lastTextBaseline) {
                     Text("Good morning!")
-                        .font(.system(size: 14))
+                        .font(.satoshi(size: 14))
                         .foregroundStyle(.gray)
                     Spacer()
                     Text("Location")
-                        .font(.system(size: 14))
+                        .font(.satoshi(size: 14))
                         .foregroundStyle(.gray)
                     
                     
                 }
                 HStack(alignment: .lastTextBaseline) {
                     Text("Noah Turner")
-                        .font(.system(size: 20))
+                        .font(.satoshi(size: 20))
                         .foregroundStyle(.black)
                     Spacer()
                     Text("New Yourk, NY")
-                        .font(.system(size: 16))
+                        .font(.satoshi(size: 16))
                         .foregroundStyle(.black)
                 }
             }
@@ -120,12 +120,12 @@ struct HealthcareMainView: View {
                     ZStack(alignment: .leading) {
                         if !isFocused && searchText.isEmpty {
                             Text("Serch a doctor, drugs, etc...")
-                                .font(.system(size: 14))
+                                .font(.satoshi(size: 14))
                                 .foregroundStyle(.gray.mix(with: .white, by: 0.4))
                                 .padding(.vertical, 14)
                         }
                         TextField("", text: $searchText)
-                            .font(.system(size: 18))
+                            .font(.satoshi(size: 18))
                             .focused($isFocused)
                             .foregroundStyle(.gray)
                             .textFieldStyle(.plain)
@@ -160,7 +160,7 @@ struct HealthcareMainView: View {
     var groupHeaderView: some View {
         HStack {
             Text("Recent Appointments")
-                .font(.system(size: 22))
+                .font(.satoshi(size: 22))
                 .foregroundStyle(.black)
             
             Spacer()
@@ -168,6 +168,7 @@ struct HealthcareMainView: View {
                 // Action
             } label: {
                 Text("See All")
+                    .font(.satoshi(size: 16))
                     .foregroundStyle(.gray)
             }
         }
@@ -222,11 +223,11 @@ struct HealthcareMainView: View {
                     
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Dr. Olivia Carter")
-                            .font(.system(size: 18))
+                            .font(.satoshi(size: 18))
                             .foregroundStyle(.white)
                         
                         Text("Nephrology")
-                            .font(.system(size: 14))
+                            .font(.satoshi(size: 14))
                             .foregroundStyle(.white)
                     }
                     Spacer()
@@ -254,11 +255,11 @@ struct HealthcareMainView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Text("Date")
-                            .font(.system(size: 16))
+                            .font(.satoshi(size: 16))
                             .foregroundStyle(.white.opacity(0.5))
 
                         Text("24 Apl. Monday")
-                            .font(.system(size: 14))
+                            .font(.satoshi(size: 14))
                             .foregroundStyle(.white)
                         
                         Button("Rescedule") {
@@ -269,11 +270,11 @@ struct HealthcareMainView: View {
                     Spacer()
                     VStack(alignment: .leading) {
                         Text("Time")
-                            .font(.system(size: 16))
+                            .font(.satoshi(size: 16))
                             .foregroundStyle(.white.opacity(0.5))
                         
                         Text("10:00 AM - 11:00 AM")
-                            .font(.system(size: 14))
+                            .font(.satoshi(size: 14))
                             .foregroundStyle(.white)
                         
                         Button("View profile") {

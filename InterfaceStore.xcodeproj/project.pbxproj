@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA0BCBF32E6B12F8002898C5 /* Satoshi-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA0BCBF02E6B12F8002898C5 /* Satoshi-Variable.ttf */; };
+		CA0BCBF42E6B12F8002898C5 /* Satoshi-VariableItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CA0BCBF12E6B12F8002898C5 /* Satoshi-VariableItalic.ttf */; };
+		CA0BCBF62E6B1321002898C5 /* HealthcareFontExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0BCBF52E6B1318002898C5 /* HealthcareFontExt.swift */; };
 		CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */; };
 		CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */; };
 		CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA3E06E72E671ED6004D5BC8 /* CustomNavigationBarScreen.swift */; };
@@ -27,6 +30,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA0BCBF02E6B12F8002898C5 /* Satoshi-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-Variable.ttf"; sourceTree = "<group>"; };
+		CA0BCBF12E6B12F8002898C5 /* Satoshi-VariableItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Satoshi-VariableItalic.ttf"; sourceTree = "<group>"; };
+		CA0BCBF52E6B1318002898C5 /* HealthcareFontExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareFontExt.swift; sourceTree = "<group>"; };
+		CA0BCBF72E6B13C6002898C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		CA0EDEB22E632C6F006A4B05 /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		CA0EDEB42E63316B006A4B05 /* TabBarUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarUtils.swift; sourceTree = "<group>"; };
 		CA1DB1782E5CE8E000FD07C8 /* InterfaceStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InterfaceStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +65,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CA0BCBEF2E6B12EB002898C5 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				CA0BCBF22E6B12F8002898C5 /* TTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		CA0BCBF22E6B12F8002898C5 /* TTF */ = {
+			isa = PBXGroup;
+			children = (
+				CA0BCBF02E6B12F8002898C5 /* Satoshi-Variable.ttf */,
+				CA0BCBF12E6B12F8002898C5 /* Satoshi-VariableItalic.ttf */,
+			);
+			path = TTF;
+			sourceTree = "<group>";
+		};
 		CA1DB16F2E5CE8E000FD07C8 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +112,7 @@
 		CA63CA102E5CE9330059489E /* InterfaceStore */ = {
 			isa = PBXGroup;
 			children = (
+				CA0BCBF72E6B13C6002898C5 /* Info.plist */,
 				CA63CA142E5CECC10059489E /* Resources */,
 				CA63CA152E5CED000059489E /* MainApp */,
 				CA63CA162E5CED310059489E /* ContentStore */,
@@ -98,6 +123,7 @@
 		CA63CA142E5CECC10059489E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CA0BCBEF2E6B12EB002898C5 /* Fonts */,
 				CA63CA0D2E5CE9330059489E /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -136,6 +162,7 @@
 		CA63CA1A2E5F94440059489E /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CA0BCBF52E6B1318002898C5 /* HealthcareFontExt.swift */,
 				CA3E06F12E69E68B004D5BC8 /* HealthcareColorExt.swift */,
 				CA63CA1B2E5F944D0059489E /* HealthAppConstants.swift */,
 			);
@@ -231,6 +258,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0BCBF32E6B12F8002898C5 /* Satoshi-Variable.ttf in Resources */,
+				CA0BCBF42E6B12F8002898C5 /* Satoshi-VariableItalic.ttf in Resources */,
 				CA63CA112E5CE9330059489E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +278,7 @@
 				CA3E06F22E69E691004D5BC8 /* HealthcareColorExt.swift in Sources */,
 				CA882CBA2E61E06100CA5BEE /* CustomTabBarViewScreen.swift in Sources */,
 				CA0EDEB52E633174006A4B05 /* TabBarUtils.swift in Sources */,
+				CA0BCBF62E6B1321002898C5 /* HealthcareFontExt.swift in Sources */,
 				CA3E06EE2E67300E004D5BC8 /* NavigationBarUtils.swift in Sources */,
 				CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */,
 				CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */,
@@ -392,6 +422,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InterfaceStore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -419,6 +450,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InterfaceStore/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
