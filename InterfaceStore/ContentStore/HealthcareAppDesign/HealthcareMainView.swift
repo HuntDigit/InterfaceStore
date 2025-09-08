@@ -36,6 +36,23 @@ struct AppointmentButtonStyleTransparent: ButtonStyle {
     }
 }
 
+struct CategoryButtonStyle: ButtonStyle {
+    
+    var isSelected: Bool = false
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.satoshi(size: 14))
+            .frame(maxWidth:.infinity)
+            .padding(16)
+            .foregroundStyle(.white)
+            .background(isSelected ? Color.gray.opacity(0.5) : Color("categoryBackgoundButton").opacity(0.5) )
+            .clipShape(Capsule())
+            .opacity(configuration.isPressed ? 0.7 : 1.0)
+            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
+    }
+}
+
 struct HealthcareMainView: View {
     
     @FocusState var isFocused
@@ -47,8 +64,16 @@ struct HealthcareMainView: View {
                 headerView
                 ScrollView {
                     LazyVStack {
-                        groupHeaderView
+                        groupHeaderView(text: "Recent Appointments",
+                                        buttonText: "View All") {
+                            // Action
+                        }
                         appointmentCardView
+                        groupHeaderView(text: "Doctors",
+                                        buttonText: "View All") {
+                            // Action
+                        }
+                        categoriesView
                     }
                 }
             }
@@ -157,19 +182,23 @@ struct HealthcareMainView: View {
         }
     }
     
-    var groupHeaderView: some View {
+    func groupHeaderView(text: String,
+                         buttonText: String? = nil,
+                         action: @escaping () -> ()) -> some View {
         HStack {
-            Text("Recent Appointments")
+            Text(text)
                 .font(.satoshi(size: 22))
                 .foregroundStyle(.black)
             
             Spacer()
-            Button {
-                // Action
-            } label: {
-                Text("See All")
-                    .font(.satoshi(size: 16))
-                    .foregroundStyle(.gray)
+            if let labelText = buttonText {
+                Button {
+                    action()
+                } label: {
+                    Text(labelText)
+                        .font(.satoshi(size: 16))
+                        .foregroundStyle(.gray)
+                }
             }
         }
         .frame(minHeight: 44)
@@ -289,6 +318,23 @@ struct HealthcareMainView: View {
             .padding(.vertical, 16)
         }
         .padding(16)
+    }
+    
+    var categoriesView: some View {
+        VStack(alignment: .leading) {
+            ScrollView {
+                LazyHStack {
+                    ForEach(0..<4) { index in
+                        Button {
+                            // Aaction
+                        } label: {
+                            Text("Category \(index + 1)")
+                        }
+                        .buttonStyle(CategoryButtonStyle())
+                    }
+                }
+            }
+        }
     }
 }
 
