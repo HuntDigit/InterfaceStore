@@ -7,6 +7,19 @@
 
 import SwiftUI
 
+struct CategoryModel: Equatable, Hashable {
+    var categoryType: CategoryType
+    var isSelected: Bool = false
+}
+
+enum CategoryType: String, CaseIterable {
+    case generalPractice = "General Practice"
+    case cardiology      = "Cardiology"
+    case orthopedics     = "Orthopedics"
+    case ophthalmology   = "Ophthalmology"
+    case pediatrics      = "Pediatrics"
+}
+
 
 struct AppointmentButtonStyleFilled: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
@@ -57,6 +70,14 @@ struct HealthcareMainView: View {
     
     @FocusState var isFocused
     @State var searchText: String = ""
+    @State var categories: [CategoryModel] = [
+        .init(categoryType: .generalPractice),
+        .init(categoryType: .cardiology),
+        .init(categoryType: .orthopedics),
+        .init(categoryType: .ophthalmology),
+        .init(categoryType: .pediatrics)
+    ]
+    @State var selectedCategories: [CategoryModel] = []
 
     var body: some View {
         ZStack {
@@ -322,19 +343,36 @@ struct HealthcareMainView: View {
     
     var categoriesView: some View {
         VStack(alignment: .leading) {
-            ScrollView {
+            ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
-                    ForEach(0..<4) { index in
+                    ForEach(categories, id: \.self) { category in
+                        let isSelected = self.isSelected(category)
                         Button {
-                            // Aaction
+                            if !isSelected {
+                                selectedCategories.append(category)
+                            } else {
+                                remove(category)
+                            }
                         } label: {
-                            Text("Category \(index + 1)")
+                            Text(category.categoryType.rawValue)
                         }
-                        .buttonStyle(CategoryButtonStyle())
+                        .buttonStyle(CategoryButtonStyle(isSelected: isSelected))
+                        .padding(.horizontal, 1)
                     }
                 }
             }
         }
+        .padding(.horizontal, 16)
+    }
+    
+    func isSelected(_ category: CategoryModel) -> Bool {
+        selectedCategories.contains { $0 == category }
+    }
+    
+    func remove(_ category: CategoryModel) {
+        if let index = selectedCategories.firstIndex(of: category) {
+            selectedCategories.remove(at: index)
+        } else { print("Category not found") }
     }
 }
 
