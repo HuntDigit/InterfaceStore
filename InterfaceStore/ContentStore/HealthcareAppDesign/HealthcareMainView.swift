@@ -95,6 +95,9 @@ struct HealthcareMainView: View {
                             // Action
                         }
                         categoriesView
+                        ForEach(1..<10) { index in
+                            doctorCardView
+                        }
                     }
                 }
             }
@@ -281,20 +284,10 @@ struct HealthcareMainView: View {
                             .foregroundStyle(.white)
                     }
                     Spacer()
-                    Button {
-                        // action
-                    } label: {
-                        Image(systemName: "envelope")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(14)
-                            .foregroundStyle(.white)
-                            .frame(width: 50, height: 50)
-                            .background(Color.white.opacity(0.2))
-                            .clipShape(Circle())
-                            .padding(14)
+                    messageButton() {
+                        // Action
                     }
-                    
+                    .padding(14)
                 }
                 
                 RoundedRectangle(cornerRadius: 1)
@@ -363,6 +356,70 @@ struct HealthcareMainView: View {
             }
         }
         .padding(.horizontal, 16)
+    }
+    
+    var doctorCardView: some View {
+        HStack(spacing: 8) {
+            Image("female-doctor-avatar")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 78, height: 78)
+                .clipShape(RoundedRectangle(cornerRadius: 24))
+            VStack(alignment:  .leading) {
+                Text("Dr. Deniel Raynolds")
+                    .font(.satoshi(size: 16))
+                    .foregroundColor(.black)
+                Text("General Practitioner")
+                    .font(.satoshi(size: 13))
+                    .foregroundColor(.gray)
+                Spacer()
+                HStack {
+                    Image(systemName: "star.fill")
+                        .foregroundStyle(Color.yellow)
+                    Text("4.7")
+                        .font(.satoshi(size: 13))
+                    RoundedRectangle(cornerRadius: 1)
+                        .fill(Color(.gray).mix(with: .white, by: 0.5))
+                        .font(.satoshi(size: 13))
+                        .frame(width: 1)
+                        .padding(4)
+                    Text("120 reviews")
+                        .font(.satoshi(size: 13))
+                }
+            }
+            .padding(.vertical, 8)
+            Spacer()
+            VStack {
+                messageButton(.green, .white) {
+                    // Action
+                }
+                Spacer()
+            }
+        }
+        .padding(12)
+        .background {
+            RoundedRectangle(cornerRadius: 24)
+                .fill(Color(.white))
+        }
+        .padding(.horizontal, 12)
+
+    }
+    
+    func messageButton(_ background: Color = .white.opacity(0.2),
+                       _ foreground: Color = .white,
+                       action: @escaping () -> ()) -> some View {
+        Button {
+            action()
+        } label: {
+            Image(systemName: "envelope")
+                .resizable()
+                .scaledToFit()
+                .padding(14)
+                .frame(width: 50, height: 50)
+                .background(background)
+                .foregroundStyle(foreground)
+                .clipShape(Circle())
+        }
     }
     
     func isSelected(_ category: CategoryModel) -> Bool {
