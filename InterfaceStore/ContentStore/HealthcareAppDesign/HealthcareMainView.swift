@@ -57,8 +57,8 @@ struct CategoryButtonStyle: ButtonStyle {
             .font(.satoshi(size: 14))
             .frame(maxWidth:.infinity)
             .padding(16)
-            .foregroundStyle(isSelected ? Color("categoryBackgoundButton") : Color.white)
-            .background(isSelected ? Color.white : Color("categoryBackgoundButton") )
+            .foregroundStyle(isSelected ? Color.white : Color("categorySelectedButton"))
+            .background(isSelected ? Color("categorySelectedButton") : Color("categoryDeselectedButton") )
             .clipShape(Capsule())
             .opacity(configuration.isPressed ? 0.7 : 1.0)
             .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
@@ -83,20 +83,40 @@ struct HealthcareMainView: View {
             VStack {
                 headerView
                 ScrollView {
-                    LazyVStack {
-                        groupHeaderView(text: "Recent Appointments",
-                                        buttonText: "View All") {
-                            // Action
+                    LazyVStack(pinnedViews: .sectionHeaders) {
+                        Section {
+                            appointmentCardView
+                        } header: {
+                            VStack {
+                                groupHeaderView(text: "Recent Appointments",
+                                                buttonText: "View All") {
+                                    // Action
+                                }
+                            }
+                            .padding(.vertical, 4)
+                            .padding(.bottom, 8)
+                            .background {
+                                headerBackground
+                            }                        }
+                        Section {
+                            ForEach(1..<10) { index in
+                                doctorCardView
+                            }
+                        } header: {
+                            VStack {
+                                groupHeaderView(text: "Doctors",
+                                                buttonText: "View All") {
+                                    // Action
+                                }
+                                categoriesView
+                            }
+                            .padding(.vertical, 4)
+                            .padding(.bottom, 8)
+                            .background {
+                                headerBackground
+                            }
                         }
-                        appointmentCardView
-                        groupHeaderView(text: "Doctors",
-                                        buttonText: "View All") {
-                            // Action
-                        }
-                        categoriesView
-                        ForEach(1..<10) { index in
-                            doctorCardView
-                        }
+                        
                     }
                 }
             }
@@ -411,6 +431,15 @@ struct HealthcareMainView: View {
         }
         .padding(.horizontal, 12)
 
+    }
+    
+    var headerBackground: some View {
+        LinearGradient(colors: [
+            Color("backgroundMain"),
+            Color("backgroundMain"),
+            Color("backgroundMain").opacity(0.0)],
+                       startPoint: .center,
+                       endPoint: .bottom)
     }
     
     func messageButton(_ background: Color = .white.opacity(0.2),
