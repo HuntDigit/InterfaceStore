@@ -20,7 +20,6 @@ enum CategoryType: String, CaseIterable {
     case pediatrics      = "Pediatrics"
 }
 
-
 struct AppointmentButtonStyleFilled: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -338,6 +337,15 @@ struct HealthcareMainView: View {
         VStack(alignment: .leading) {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHStack {
+                    Button {
+                        selectedCategories.removeAll()
+                    } label: {
+                        Text("All")
+                            .padding(.horizontal, 5)
+                    }
+                    .buttonStyle(CategoryButtonStyle(isSelected: selectedCategories.isEmpty))
+                    .padding(.horizontal, 1)
+                    
                     ForEach(categories, id: \.self) { category in
                         let isSelected = self.isSelected(category)
                         Button {
