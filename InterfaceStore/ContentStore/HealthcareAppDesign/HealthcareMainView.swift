@@ -7,64 +7,6 @@
 
 import SwiftUI
 
-struct CategoryModel: Equatable, Hashable {
-    var categoryType: CategoryType
-    var isSelected: Bool = false
-}
-
-enum CategoryType: String, CaseIterable {
-    case generalPractice = "General Practice"
-    case cardiology      = "Cardiology"
-    case orthopedics     = "Orthopedics"
-    case ophthalmology   = "Ophthalmology"
-    case pediatrics      = "Pediatrics"
-}
-
-struct AppointmentButtonStyleFilled: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.satoshi(size: 14))
-            .frame(maxWidth:.infinity)
-            .padding(16)
-            .foregroundStyle(.blue)
-            .background(Color.white)
-            .clipShape(Capsule())
-            .opacity(configuration.isPressed ? 0.7 : 1.0)
-            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-    }
-}
-
-struct AppointmentButtonStyleTransparent: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.satoshi(size: 14))
-            .frame(maxWidth:.infinity)
-            .padding(16)
-            .foregroundStyle(.white)
-            .background(Color.white.opacity(0.2))
-            .clipShape(Capsule())
-            .opacity(configuration.isPressed ? 0.7 : 1.0)
-            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-    }
-}
-
-struct CategoryButtonStyle: ButtonStyle {
-    
-    var isSelected: Bool = false
-    
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .font(.satoshi(size: 14))
-            .frame(maxWidth:.infinity)
-            .padding(16)
-            .foregroundStyle(isSelected ? Color.white : Color("categorySelectedButton"))
-            .background(isSelected ? Color("categorySelectedButton") : Color("categoryDeselectedButton") )
-            .clipShape(Capsule())
-            .opacity(configuration.isPressed ? 0.7 : 1.0)
-            .scaleEffect(configuration.isPressed ? 0.9 : 1.0)
-    }
-}
-
 struct HealthcareMainView: View {
     
     @FocusState var isFocused
@@ -97,7 +39,8 @@ struct HealthcareMainView: View {
                             .padding(.bottom, 8)
                             .background {
                                 headerBackground
-                            }                        }
+                            }
+                        }
                         Section {
                             ForEach(1..<10) { index in
                                 doctorCardView
@@ -343,7 +286,6 @@ struct HealthcareMainView: View {
                             // Action
                         }
                         .buttonStyle(AppointmentButtonStyleTransparent())
-
                     }
                 }
                 .padding(.horizontal, 14)
@@ -430,7 +372,6 @@ struct HealthcareMainView: View {
                 .fill(Color(.white))
         }
         .padding(.horizontal, 12)
-
     }
     
     var headerBackground: some View {
