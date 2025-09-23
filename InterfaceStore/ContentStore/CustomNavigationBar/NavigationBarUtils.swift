@@ -7,13 +7,12 @@
 
 import SwiftUI
 
+
 struct NavigationBarTitlePreferenceKey: PreferenceKey {
-    static var defaultValue: String = ""
+    static let defaultValue: String = ""
     
     static func reduce(value: inout String, nextValue: () -> String) {
-//        print("Next Value: \(nextValue())")
         value += nextValue()
-//        print("Seted value:\(value)")
     }
 }
 

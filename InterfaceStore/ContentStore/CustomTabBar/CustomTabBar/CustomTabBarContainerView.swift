@@ -22,7 +22,6 @@ struct CustomTabBarContainerView<Content: View>: View {
     var body: some View {
         ZStack() {
             content
-                .ignoresSafeArea(edges: .all)
         }
         .overlay(alignment: .bottom) {
             CustomTabBarView(tabs: tabs,

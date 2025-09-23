@@ -19,50 +19,66 @@ struct HealthcareMainView: View {
         .init(categoryType: .pediatrics)
     ]
     @State var selectedCategories: [CategoryModel] = []
+    @State private var selection: TabBarItem = .home
 
     var body: some View {
         ZStack {
-            VStack {
-                headerView
-                ScrollView {
-                    LazyVStack(pinnedViews: .sectionHeaders) {
-                        Section {
-                            appointmentCardView
-                        } header: {
-                            VStack {
-                                groupHeaderView(text: "Recent Appointments",
-                                                buttonText: "View All") {
-                                    // Action
+            CustomTabBarContainerView(selection: $selection) {
+                VStack {
+                    headerView
+                    
+                    ScrollView {
+                        LazyVStack(pinnedViews: .sectionHeaders) {
+                            Section {
+                                appointmentCardView
+                            } header: {
+                                VStack {
+                                    groupHeaderView(text: "Recent Appointments",
+                                                    buttonText: "View All") {
+                                        // Action
+                                    }
+                                }
+                                .padding(.vertical, 4)
+                                .padding(.bottom, 8)
+                                .background {
+                                    headerBackground
                                 }
                             }
-                            .padding(.vertical, 4)
-                            .padding(.bottom, 8)
-                            .background {
-                                headerBackground
-                            }
-                        }
-                        Section {
-                            ForEach(1..<10) { index in
-                                doctorCardView
-                            }
-                        } header: {
-                            VStack {
-                                groupHeaderView(text: "Doctors",
-                                                buttonText: "View All") {
-                                    // Action
+                            Section {
+                                ForEach(1..<10) { index in
+                                    doctorCardView
                                 }
-                                categoriesView
+                            } header: {
+                                VStack {
+                                    groupHeaderView(text: "Doctors",
+                                                    buttonText: "View All") {
+                                        // Action
+                                    }
+                                    categoriesView
+                                }
+                                .padding(.vertical, 4)
+                                .padding(.bottom, 8)
+                                .background {
+                                    headerBackground
+                                }
                             }
-                            .padding(.vertical, 4)
-                            .padding(.bottom, 8)
-                            .background {
-                                headerBackground
-                            }
+                            
                         }
-                        
                     }
+                    .scrollDismissesKeyboard(.interactively)
                 }
+                .tabBarItem(.home, selection: $selection)
+                
+                Color.orange
+                    .ignoresSafeArea()
+                    .tabBarItem(.favorites, selection: $selection)
+                
+                Color.green
+                    .ignoresSafeArea()
+                    .tabBarItem(.settings, selection: $selection)
             }
+            .padding(.bottom, 4)
+            .ignoresSafeArea(edges: .bottom)
         }
         .background {
             Color("backgroundMain")

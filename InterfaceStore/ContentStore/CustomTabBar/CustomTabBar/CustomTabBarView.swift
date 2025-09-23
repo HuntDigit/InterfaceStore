@@ -52,10 +52,12 @@ extension CustomTabBarView {
     private func highlightBackground(_ tab: TabBarItem) -> some View {
         ZStack {
             if pSelection == tab {
-                RoundedRectangle(cornerRadius: 10)
-                    .fill(tab.color.opacity(0.2))
-                    .matchedGeometryEffect(id: geomertyID,
-                                           in: localNamespace)
+                GeometryReader { proxy in
+                    RoundedRectangle(cornerRadius: proxy.frame(in: .local).midY, style: .continuous)
+                        .fill(tab.color.opacity(0.2))
+                        .matchedGeometryEffect(id: geomertyID,
+                                               in: localNamespace)
+                }
             }
         }
     }
@@ -66,11 +68,13 @@ extension CustomTabBarView {
                 tabViewAnimated(tab: tab)
             }
         }
-        .padding(14)
+        .padding(8)
         .background {
-            RoundedRectangle(cornerRadius: 20)
-                .fill(Material.regular)
-                .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: 5)
+            GeometryReader { proxy in
+                RoundedRectangle(cornerRadius: proxy.frame(in: .local).midY, style: .continuous)
+                    .fill(Material.regular)
+                    .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: 5)
+            }
         }
         .padding(14)
         
