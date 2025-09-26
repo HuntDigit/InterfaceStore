@@ -64,6 +64,9 @@ struct HealthcareMainView: View {
                             }
                             
                         }
+                        
+                        Color.clear
+                            .padding(.bottom, 90)
                     }
                     .scrollDismissesKeyboard(.interactively)
                 }
@@ -88,50 +91,12 @@ struct HealthcareMainView: View {
     
     var headerView: some View {
         VStack {
-            profileView
+            HealthcareProfileView(avatarName: "female-doctor-avatar")
                 .padding(.vertical, 10)
             searchView
         }
     }
-    
-    var profileView: some View {
-        HStack(spacing: 0) {
-            Image("female-doctor-avatar")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 70, height: 70)
-                .background(Color.green)
-                .clipShape(Circle())
-                .padding(.leading, 16)
-                .padding(.trailing, 14)
-            
-            
-            VStack(spacing: 8) {
-                HStack(alignment: .lastTextBaseline) {
-                    Text("Good morning!")
-                        .font(.satoshi(size: 14))
-                        .foregroundStyle(.gray)
-                    Spacer()
-                    Text("Location")
-                        .font(.satoshi(size: 14))
-                        .foregroundStyle(.gray)
-                    
-                    
-                }
-                HStack(alignment: .lastTextBaseline) {
-                    Text("Noah Turner")
-                        .font(.satoshi(size: 20))
-                        .foregroundStyle(.black)
-                    Spacer()
-                    Text("New Yourk, NY")
-                        .font(.satoshi(size: 16))
-                        .foregroundStyle(.black)
-                }
-            }
-            .padding(.trailing, 16)
-        }
-    }
-    
+
     var searchView: some View {
         HStack {
             ZStack {
