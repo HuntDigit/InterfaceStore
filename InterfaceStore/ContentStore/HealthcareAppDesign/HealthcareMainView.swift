@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HealthcareMainView: View {
     
-    @FocusState var isFocused
     @State var searchText: String = ""
     @State var categories: [CategoryModel] = [
         .init(categoryType: .generalPractice),
@@ -93,62 +92,11 @@ struct HealthcareMainView: View {
         VStack {
             HealthcareProfileView(avatarName: "female-doctor-avatar")
                 .padding(.vertical, 10)
-            searchView
+            HealthcareSearchView(searchText: $searchText)
+                .padding(.horizontal, 16)
         }
     }
 
-    var searchView: some View {
-        HStack {
-            ZStack {
-                RoundedRectangle(cornerRadius: 18, style: .continuous)
-                    .fill(.white)
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundStyle(.gray)
-                        .frame(width: 22, height: 22)
-                        .padding(14)
-                    ZStack(alignment: .leading) {
-                        if !isFocused && searchText.isEmpty {
-                            Text("Serch a doctor, drugs, etc...")
-                                .font(.satoshi(size: 14))
-                                .foregroundStyle(.gray.mix(with: .white, by: 0.4))
-                                .padding(.vertical, 14)
-                        }
-                        TextField("", text: $searchText)
-                            .font(.satoshi(size: 18))
-                            .focused($isFocused)
-                            .foregroundStyle(.gray)
-                            .textFieldStyle(.plain)
-                            .keyboardType(.default)
-                            .padding(.vertical, 14)
-                    }
-                }
-            }
-            .frame(height: 64)
-            .padding(.leading, 16)
-            
-            Button {
-                // Action
-            } label: {
-                ZStack {
-                    RoundedRectangle(cornerRadius: 18, style: .continuous)
-                        .fill(.white)
-                    Image(systemName: "microphone")
-                        .resizable()
-                        .scaledToFit()
-                        .foregroundStyle(.gray)
-                        .frame(width: 22, height: 22)
-                        .padding(14)
-
-                }
-            }
-            .frame(width: 64, height: 64)
-            .padding(.trailing, 16)
-        }
-    }
-    
     func groupHeaderView(text: String,
                          buttonText: String? = nil,
                          action: @escaping () -> ()) -> some View {
