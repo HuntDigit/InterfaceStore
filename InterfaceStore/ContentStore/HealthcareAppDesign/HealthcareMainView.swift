@@ -25,11 +25,10 @@ struct HealthcareMainView: View {
             CustomTabBarContainerView(selection: $selection) {
                 VStack {
                     headerView
-                    
                     ScrollView {
                         LazyVStack(pinnedViews: .sectionHeaders) {
                             Section {
-                                appointmentCardView
+                                HealthcareAppointmentCardView(count: 3)
                             } header: {
                                 VStack {
                                     groupHeaderView(text: "Recent Appointments",
@@ -120,110 +119,6 @@ struct HealthcareMainView: View {
         .padding(.horizontal, 16)
     }
     
-    var appointmentCardView: some View {
-        ZStack {
-            
-            RoundedRectangle(cornerRadius: 24,
-                             style: .circular)
-            .fill(
-                Color("appointmentBackgound0")
-                    .mix(with: .white, by: 0.8)
-            )
-            .frame(maxWidth: .infinity)
-            .scaleEffect(0.90)
-            .offset(y: -30)
-            
-            RoundedRectangle(cornerRadius: 24,
-                             style: .circular)
-            .fill(
-                Color("appointmentBackgound0")
-                    .mix(with: .white, by: 0.6)
-            )
-            .frame(maxWidth: .infinity)
-            .scaleEffect(0.95)
-            .offset(y: -15)
-            
-            RoundedRectangle(cornerRadius: 24,
-                             style: .circular)
-            .fill(
-                LinearGradient(
-                    colors: [ Color("appointmentBackgound0"),
-                              Color("appointmentBackgound1") ],
-                    startPoint: .topLeading,
-                    endPoint: .bottom)
-            )
-            .frame(maxWidth: .infinity)
-            
-            VStack {
-                HStack {
-                    Image("female-doctor-avatar-white")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70)
-                        .background(Color.green)
-                        .clipShape(Circle())
-                        .padding(.leading, 16)
-                        .padding(.trailing, 14)
-                    
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text("Dr. Olivia Carter")
-                            .font(.satoshi(size: 18))
-                            .foregroundStyle(.white)
-                        
-                        Text("Nephrology")
-                            .font(.satoshi(size: 14))
-                            .foregroundStyle(.white)
-                    }
-                    Spacer()
-                    messageButton() {
-                        // Action
-                    }
-                    .padding(14)
-                }
-                
-                RoundedRectangle(cornerRadius: 1)
-                    .fill(Color.white.opacity(0.2))
-                    .frame(height: 1)
-                    .padding(.horizontal, 14)
-                
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text("Date")
-                            .font(.satoshi(size: 16))
-                            .foregroundStyle(.white.opacity(0.5))
-
-                        Text("24 Apl. Monday")
-                            .font(.satoshi(size: 14))
-                            .foregroundStyle(.white)
-                        
-                        Button("Rescedule") {
-                            // Action
-                        }
-                        .buttonStyle(AppointmentButtonStyleFilled())
-                    }
-                    Spacer()
-                    VStack(alignment: .leading) {
-                        Text("Time")
-                            .font(.satoshi(size: 16))
-                            .foregroundStyle(.white.opacity(0.5))
-                        
-                        Text("10:00 AM - 11:00 AM")
-                            .font(.satoshi(size: 14))
-                            .foregroundStyle(.white)
-                        
-                        Button("View profile") {
-                            // Action
-                        }
-                        .buttonStyle(AppointmentButtonStyleTransparent())
-                    }
-                }
-                .padding(.horizontal, 14)
-            }
-            .padding(.vertical, 16)
-        }
-        .padding(16)
-    }
-    
     var categoriesView: some View {
         VStack(alignment: .leading) {
             ScrollView(.horizontal, showsIndicators: false) {
@@ -289,7 +184,7 @@ struct HealthcareMainView: View {
             .padding(.vertical, 8)
             Spacer()
             VStack {
-                messageButton(.green, .white) {
+                HealthcareMessageButton(background: .green, foreground: .white) {
                     // Action
                 }
                 Spacer()
@@ -311,23 +206,7 @@ struct HealthcareMainView: View {
                        startPoint: .center,
                        endPoint: .bottom)
     }
-    
-    func messageButton(_ background: Color = .white.opacity(0.2),
-                       _ foreground: Color = .white,
-                       action: @escaping () -> ()) -> some View {
-        Button {
-            action()
-        } label: {
-            Image(systemName: "envelope")
-                .resizable()
-                .scaledToFit()
-                .padding(14)
-                .frame(width: 50, height: 50)
-                .background(background)
-                .foregroundStyle(foreground)
-                .clipShape(Circle())
-        }
-    }
+
     
     func isSelected(_ category: CategoryModel) -> Bool {
         selectedCategories.contains { $0 == category }
