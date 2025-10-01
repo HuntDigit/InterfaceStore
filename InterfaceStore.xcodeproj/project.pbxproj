@@ -23,7 +23,6 @@
 		CA4805ED2E89C1A200A405EC /* HealthcareMessageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4805EC2E89C19400A405EC /* HealthcareMessageButton.swift */; };
 		CA4C25AD2E86FD6E00E9D343 /* HealthcareProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4C25AC2E86FD6300E9D343 /* HealthcareProfileView.swift */; };
 		CA63CA112E5CE9330059489E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA63CA0D2E5CE9330059489E /* Assets.xcassets */; };
-		CA63CA122E5CE9330059489E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0E2E5CE9330059489E /* ContentView.swift */; };
 		CA63CA132E5CE9330059489E /* InterfaceStoreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */; };
 		CA63CA192E5CF71D0059489E /* HealthcareLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA182E5CF71D0059489E /* HealthcareLoginView.swift */; };
 		CA63CA1C2E5F945A0059489E /* HealthAppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA63CA1B2E5F944D0059489E /* HealthAppConstants.swift */; };
@@ -55,7 +54,6 @@
 		CA4805EC2E89C19400A405EC /* HealthcareMessageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareMessageButton.swift; sourceTree = "<group>"; };
 		CA4C25AC2E86FD6300E9D343 /* HealthcareProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareProfileView.swift; sourceTree = "<group>"; };
 		CA63CA0D2E5CE9330059489E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CA63CA0E2E5CE9330059489E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceStoreApp.swift; sourceTree = "<group>"; };
 		CA63CA182E5CF71D0059489E /* HealthcareLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareLoginView.swift; sourceTree = "<group>"; };
 		CA63CA1B2E5F944D0059489E /* HealthAppConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAppConstants.swift; sourceTree = "<group>"; };
@@ -159,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				CA63CA0F2E5CE9330059489E /* InterfaceStoreApp.swift */,
-				CA63CA0E2E5CE9330059489E /* ContentView.swift */,
 			);
 			path = MainApp;
 			sourceTree = "<group>";
@@ -327,7 +324,6 @@
 				CA3E06F02E69E623004D5BC8 /* HealthcareMainView.swift in Sources */,
 				CA882CBC2E61E0BE00CA5BEE /* CustomTabBarView.swift in Sources */,
 				CA9145A82E8DCAB700EB8061 /* HealthcareDoctorCardView.swift in Sources */,
-				CA63CA122E5CE9330059489E /* ContentView.swift in Sources */,
 				CA3E06EC2E6724FD004D5BC8 /* CustomNavigationBarContainerView.swift in Sources */,
 				CA1E6A2E2E882F5E00017F66 /* HealthcareSearchView.swift in Sources */,
 				CA3E06F22E69E691004D5BC8 /* HealthcareColorExt.swift in Sources */,
