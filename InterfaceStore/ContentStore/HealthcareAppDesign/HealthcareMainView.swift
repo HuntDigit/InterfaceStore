@@ -31,8 +31,8 @@ struct HealthcareMainView: View {
                                 HealthcareAppointmentCardView(count: 3)
                             } header: {
                                 VStack {
-                                    groupHeaderView(text: "Recent Appointments",
-                                                    buttonText: "View All") {
+                                    HealthcareGroupHeaderView(text: "Recent Appointments",
+                                                              buttonText: "View All") {
                                         // Action
                                     }
                                 }
@@ -48,11 +48,12 @@ struct HealthcareMainView: View {
                                 }
                             } header: {
                                 VStack {
-                                    groupHeaderView(text: "Doctors",
-                                                    buttonText: "View All") {
+                                    HealthcareGroupHeaderView(text: "Doctors",
+                                                              buttonText: "View All") {
                                         // Action
                                     }
-                                    categoriesView
+                                    HealthcareCategoriesView(categories: $categories,
+                                                             selectedCategories: $selectedCategories)
                                 }
                                 .padding(.vertical, 4)
                                 .padding(.bottom, 8)
@@ -60,7 +61,6 @@ struct HealthcareMainView: View {
                                     headerBackground
                                 }
                             }
-                            
                         }
                         
                         Color.clear
@@ -85,6 +85,9 @@ struct HealthcareMainView: View {
             Color("backgroundMain")
                 .ignoresSafeArea(edges: .all)
         }
+        .onAppear(){
+
+        }
     }
     
     var headerView: some View {
@@ -95,64 +98,6 @@ struct HealthcareMainView: View {
                 .padding(.horizontal, 16)
         }
     }
-
-    func groupHeaderView(text: String,
-                         buttonText: String? = nil,
-                         action: @escaping () -> ()) -> some View {
-        HStack {
-            Text(text)
-                .font(.satoshi(size: 22))
-                .foregroundStyle(.black)
-            
-            Spacer()
-            if let labelText = buttonText {
-                Button {
-                    action()
-                } label: {
-                    Text(labelText)
-                        .font(.satoshi(size: 16))
-                        .foregroundStyle(.gray)
-                }
-            }
-        }
-        .frame(minHeight: 44)
-        .padding(.horizontal, 16)
-    }
-    
-    var categoriesView: some View {
-        VStack(alignment: .leading) {
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHStack {
-                    Button {
-                        selectedCategories.removeAll()
-                    } label: {
-                        Text("All")
-                            .padding(.horizontal, 5)
-                    }
-                    .buttonStyle(CategoryButtonStyle(isSelected: selectedCategories.isEmpty))
-                    .padding(.horizontal, 1)
-                    
-                    ForEach(categories, id: \.self) { category in
-                        let isSelected = self.isSelected(category)
-                        Button {
-                            if !isSelected {
-                                selectedCategories.append(category)
-                            } else {
-                                remove(category)
-                            }
-                        } label: {
-                            Text(category.categoryType.rawValue)
-                        }
-                        .buttonStyle(CategoryButtonStyle(isSelected: isSelected))
-                        .padding(.horizontal, 1)
-                    }
-                }
-            }
-        }
-        .padding(.horizontal, 16)
-    }
-    
-
     
     var headerBackground: some View {
         LinearGradient(colors: [
@@ -162,20 +107,7 @@ struct HealthcareMainView: View {
                        startPoint: .center,
                        endPoint: .bottom)
     }
-
-    
-    func isSelected(_ category: CategoryModel) -> Bool {
-        selectedCategories.contains { $0 == category }
-    }
-    
-    func remove(_ category: CategoryModel) {
-        if let index = selectedCategories.firstIndex(of: category) {
-            selectedCategories.remove(at: index)
-        } else { print("Category not found") }
-    }
 }
-
-
 
 #Preview {
     HealthcareMainView()
