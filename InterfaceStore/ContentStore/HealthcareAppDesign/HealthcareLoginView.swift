@@ -68,7 +68,7 @@ struct HealthcareLoginView: View {
     var navigationView: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack() {
-                Text("")
+                Text("Health Care App")
                     .frame(height: 44)
                     .font(.largeTitle.weight(.bold))
                     .foregroundStyle(.white)
