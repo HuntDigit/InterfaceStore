@@ -33,6 +33,7 @@
 		CA9145A82E8DCAB700EB8061 /* HealthcareDoctorCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9145A72E8DCAAD00EB8061 /* HealthcareDoctorCardView.swift */; };
 		CA9145AB2E8EE5E200EB8061 /* HealthcareGroupHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9145AA2E8EE5DA00EB8061 /* HealthcareGroupHeaderView.swift */; };
 		CA9145AD2E8EE6E300EB8061 /* HealthcareCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA9145AC2E8EE6D500EB8061 /* HealthcareCategoriesView.swift */; };
+		CAB63EC62EA3FEF000A06DBB /* AnimatedColoredCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB63EC52EA3FEEF00A06DBB /* AnimatedColoredCard.swift */; };
 		CABAFA6E2E7849950015EC58 /* ButtonsStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABAFA6D2E7849420015EC58 /* ButtonsStyle.swift */; };
 		CABAFA712E784C180015EC58 /* CategotyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABAFA702E784C130015EC58 /* CategotyModel.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +67,7 @@
 		CA9145A72E8DCAAD00EB8061 /* HealthcareDoctorCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareDoctorCardView.swift; sourceTree = "<group>"; };
 		CA9145AA2E8EE5DA00EB8061 /* HealthcareGroupHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareGroupHeaderView.swift; sourceTree = "<group>"; };
 		CA9145AC2E8EE6D500EB8061 /* HealthcareCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthcareCategoriesView.swift; sourceTree = "<group>"; };
+		CAB63EC52EA3FEEF00A06DBB /* AnimatedColoredCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedColoredCard.swift; sourceTree = "<group>"; };
 		CABAFA6D2E7849420015EC58 /* ButtonsStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsStyle.swift; sourceTree = "<group>"; };
 		CABAFA702E784C130015EC58 /* CategotyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategotyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 		CA63CA162E5CED310059489E /* ContentStore */ = {
 			isa = PBXGroup;
 			children = (
+				CAB63EC42EA3FEAF00A06DBB /* AnimatedColoredCard */,
 				CA3E06E62E671EC6004D5BC8 /* CustomNavigationBar */,
 				CA882CB72E61E01700CA5BEE /* CustomTabBar */,
 				CA63CA172E5CF1810059489E /* HealthcareAppDesign */,
@@ -233,6 +236,14 @@
 				CA9145AA2E8EE5DA00EB8061 /* HealthcareGroupHeaderView.swift */,
 			);
 			path = ListComponents;
+			sourceTree = "<group>";
+		};
+		CAB63EC42EA3FEAF00A06DBB /* AnimatedColoredCard */ = {
+			isa = PBXGroup;
+			children = (
+				CAB63EC52EA3FEEF00A06DBB /* AnimatedColoredCard.swift */,
+			);
+			path = AnimatedColoredCard;
 			sourceTree = "<group>";
 		};
 		CABAFA6C2E7849230015EC58 /* ButtonStyle */ = {
@@ -346,6 +357,7 @@
 				CA0BCBF62E6B1321002898C5 /* HealthcareFontExt.swift in Sources */,
 				CA3E06EE2E67300E004D5BC8 /* NavigationBarUtils.swift in Sources */,
 				CA9145AD2E8EE6E300EB8061 /* HealthcareCategoriesView.swift in Sources */,
+				CAB63EC62EA3FEF000A06DBB /* AnimatedColoredCard.swift in Sources */,
 				CA0EDEB32E632C74006A4B05 /* TabBarItem.swift in Sources */,
 				CA3E06E82E671EDF004D5BC8 /* CustomNavigationBarScreen.swift in Sources */,
 				CA63CA1F2E60FB410059489E /* PillowShape.swift in Sources */,

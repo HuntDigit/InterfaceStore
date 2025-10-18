@@ -11,7 +11,8 @@ import SwiftUI
 struct InterfaceStoreApp: App {
     var body: some Scene {
         WindowGroup {
-            HealthcareMainView()
+            AnimatedColoredCard()
+                .frame(width: 200, height: 200)
         }
     }
 }
