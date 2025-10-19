@@ -7,22 +7,66 @@
 
 import SwiftUI
 
+enum CardColorSet {
+    case defaultColors
+    case multiColors
+    case customColorSet([Color])
+    
+    var colorList: [Color] {
+        switch self {
+        case .defaultColors: defaultColors
+        case .multiColors: multiColors
+        case .customColorSet(let colors): colors
+        }
+    }
+    
+    private var defaultColors: [Color] {
+         [Color.processingColor1,
+          Color.processingColor2,
+          Color.processingColor2,
+          Color.processingColor3,
+          Color.processingColor3,
+          Color.processingColor1]
+    }
+    
+    private var multiColors: [Color] {
+        [Color.red,
+         Color.orange,
+         Color.orange,
+         Color.yellow,
+         Color.yellow,
+         Color.blue,
+         Color.blue,
+         Color.green,
+         Color.green,
+         Color.purple,
+         Color.purple,
+         Color.red]
+    }
+}
+
 struct AnimatedColoredCard: View {
-    @State var rotationAngle: CGFloat = 0
+        
+    //Public
+    public let lineWidth: CGFloat
+    public let cornerRadius: CGFloat
+    public let colorSet: CardColorSet
+    public let speed: Double
+
+    //Private
+    @State private var rotationAngle: CGFloat
     
-    let lineLenght: CGFloat = 20
-    let cornerRadius: CGFloat = 20
-    
-//    let colors = [Color.red,
-//                  Color.orange,
-//                  Color.yellow,
-//                  Color.blue,
-//                  Color.green,
-//                  Color.purple]
-    
-    let colors = [Color.processingColor1,
-                  Color.processingColor2,
-                  Color.processingColor3]
+    init(lineWidth: CGFloat = 7,
+         cornerRadius: CGFloat = 20,
+         colorSet: CardColorSet = .defaultColors,
+         rotationAngle: CGFloat = 0,
+         speed: Double = 2) {
+        self.lineWidth = lineWidth
+        self.cornerRadius = cornerRadius
+        self.colorSet = colorSet
+        self.rotationAngle = rotationAngle
+        self.speed = speed
+    }
     
     var body: some View {
         GeometryReader { geo in
@@ -41,14 +85,26 @@ struct AnimatedColoredCard: View {
                     .rotationEffect(.degrees(rotationAngle))
                     .mask {
                         RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
-                            .stroke(lineWidth: 7)
+                            .strokeBorder(style:
+                                StrokeStyle(
+                                    lineWidth: lineWidth,
+                                    lineCap: .round,
+                                    lineJoin: .miter,
+                                    miterLimit: 0,
+//                                    dash: [0],
+                                    dashPhase: 0
+                                )
+                                          /* ^^^
+                                           This is powerful settings we can use it for additional animation and variations of it
+                                           */
+                            )
                             .frame(width: geo.size.width, height: geo.size.height)
                     }
             }
         }
         .onAppear() {
             withAnimation(
-                .linear(duration: 2)
+                .linear(duration: speed)
                 .repeatForever(autoreverses: false)
             ) {
                 rotationAngle = 360
@@ -56,10 +112,8 @@ struct AnimatedColoredCard: View {
         }
     }
     
-    var gradient: LinearGradient {
-        LinearGradient(colors: colors,
-                       startPoint: .bottom,
-                       endPoint: .top )
+    var gradient: AngularGradient {
+        AngularGradient(colors: colorSet.colorList, center: .center)
     }
 }
 
@@ -74,7 +128,7 @@ extension CGSize {
         Color.black.ignoresSafeArea(.all)
         
         VStack {
-            AnimatedColoredCard()
+            AnimatedColoredCard(colorSet: .multiColors)
                 .frame(width: 300, height: 400)
         }
     }
